@@ -6,8 +6,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import javax.persistence.*;
 import java.sql.Timestamp;
 
-@Getter
-@Builder
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
@@ -15,7 +14,7 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @Column(nullable = false, length = 100, unique = true)
     private String name;
@@ -32,5 +31,13 @@ public class User {
 
     @CreationTimestamp
     private Timestamp createDate;
+
+    @Builder
+    public User(String name, String email, String password, Role role) {
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.role = role;
+    }
 }
 
