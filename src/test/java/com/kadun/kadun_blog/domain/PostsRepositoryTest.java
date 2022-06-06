@@ -5,19 +5,19 @@ import com.kadun.kadun_blog.model.Board;
 import com.kadun.kadun_blog.model.Role;
 import com.kadun.kadun_blog.model.User;
 import com.kadun.kadun_blog.repository.BoardRepository;
-import org.aspectj.lang.annotation.After;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.List;
-
 @SpringBootTest
 public class PostsRepositoryTest {
 
     @Autowired
     BoardRepository boardRepository;
+
 
     @Test
     public void 글쓰기테스트() {
